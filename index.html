@@ -15,6 +15,8 @@
         <i class='bx bx-fullscreen maxScreen' onclick="abrirPantallaCompleta();"></i>
 
         <h2 class="texted" contenteditable="true">Senior Full Stack. Christian Menendez.</h2>
+        <br><br><br>
+        <h2 class="textedtwo" contenteditable="true">Programador División Comunicación y Cultura.</h2>
         <img class="logoUTU" src="Logo ANEP-UTU blanco.png" alt="">
         
         <div class="panelcircles">
@@ -35,6 +37,7 @@
         const panel = document.querySelector(".panelcircles");
         const main = document.querySelector(".maine");
         const text = document.querySelector(".texted");
+        const textedtwo = document.querySelector(".textedtwo");
 
         //buttons
         const blue = document.querySelector(".blue");
@@ -106,6 +109,7 @@
         {
             (x ==1)?font+= 0.1:font-= 0.1;
             text.style.fontSize = font + "rem";
+            textedtwo.style.fontSize = (font - 0.5) + "rem";
         } 
     </script>
 </body>
@@ -152,6 +156,12 @@
         width: fit-content;
         margin: 0;
         transform: translateY(-10vh);
+    }
+
+    main>h2:nth-of-type(2)
+    {
+        font-size: 4.5vh;
+        font-weight: 600;
     }
 
     main>i 
