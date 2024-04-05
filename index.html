@@ -89,7 +89,6 @@
         function abrirPantallaCompleta() {
             // Obtener el elemento raíz (documento)
             const elemento = document.documentElement;
-            document.querySelector(".maxScreen").style.display = "none";
             // Verificar si el navegador soporta el modo de pantalla completa
             if (elemento.requestFullscreen) {
                 elemento.requestFullscreen();
@@ -101,21 +100,6 @@
                 elemento.msRequestFullscreen();
             }
         }
-
-        
-        // Función para manejar el evento de salida de pantalla completa
-        function handleSalirPantallaCompleta() 
-        {
-            document.querySelector(".maxScreen").style.display = "initial";
-        }
-
-        const elemento = document.documentElement;
-        // Agregar los eventos de cambio de estado de pantalla completa
-        documento.addEventListener('fullscreenchange', handleSalirPantallaCompleta);
-        documento.addEventListener('webkitfullscreenchange', handleSalirPantallaCompleta);
-        documento.addEventListener('mozfullscreenchange', handleSalirPantallaCompleta);
-        documento.addEventListener('MSFullscreenChange', handleSalirPantallaCompleta);
-
 
         //font logic
         function changeFont(x) 
