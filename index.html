@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tablets UTU</title>
+    <title>ANEP | UTU</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body class="maine">
     <main>
+        <i class='bx bx-fullscreen maxScreen' onclick="abrirPantallaCompleta();"></i>
+
         <h2 class="texted" contenteditable="true">Senior Full Stack. Christian Menendez.</h2>
         <img class="logoUTU" src="Logo ANEP-UTU blanco.png" alt="">
         
@@ -85,7 +89,7 @@
         function abrirPantallaCompleta() {
             // Obtener el elemento raíz (documento)
             const elemento = document.documentElement;
-
+            document.querySelector(".maxScreen").style.display = "none";
             // Verificar si el navegador soporta el modo de pantalla completa
             if (elemento.requestFullscreen) {
                 elemento.requestFullscreen();
@@ -97,6 +101,20 @@
                 elemento.msRequestFullscreen();
             }
         }
+
+        
+        // Función para manejar el evento de salida de pantalla completa
+        function handleSalirPantallaCompleta() 
+        {
+            document.querySelector(".maxScreen").style.display = "initial";
+        }
+
+        // Agregar los eventos de cambio de estado de pantalla completa
+        documento.addEventListener('fullscreenchange', handleSalirPantallaCompleta);
+        documento.addEventListener('webkitfullscreenchange', handleSalirPantallaCompleta);
+        documento.addEventListener('mozfullscreenchange', handleSalirPantallaCompleta);
+        documento.addEventListener('MSFullscreenChange', handleSalirPantallaCompleta);
+
 
         //font logic
         function changeFont(x) 
@@ -149,6 +167,15 @@
         width: fit-content;
         margin: 0;
         transform: translateY(-10vh);
+    }
+
+    main>i 
+    {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: white;
+        font-size: 2rem;
     }
 
     .logoUTU 
