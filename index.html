@@ -92,8 +92,9 @@
         }
 
         // Función para abrir el sitio en pantalla completa
-        function abrirPantallaCompleta() {
-            document.querySelector(".maxScreen").style.display = "none";
+        function abrirPantallaCompleta() 
+        {
+            if(!document.querySelector(".maxScreen").classList.contains("imoved")) document.querySelector(".maxScreen").classList.add("imoved");
             // Obtener el elemento raíz (documento)
             const elemento = document.documentElement;
             // Verificar si el navegador soporta el modo de pantalla completa
@@ -193,6 +194,11 @@
         right: 15px;
         color: white;
         font-size: 2rem;
+    }
+    
+    .imoved 
+    {
+        display: none;
     }
 
     .logoUTU 
