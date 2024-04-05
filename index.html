@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tablets UTU</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="maine">
+        <h2 class="texted" contenteditable="true">Senior Full Stack. Christian Menendez.</h2>
+        <img class="logoUTU" src="Logo ANEP-UTU blanco.png" alt="">
+        
+        <div class="panelcircles">
+            <div class="blue"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+        </div>
+    </main>
+
+    <script>
+        const img = document.querySelector(".logoUTU");
+        const panel = document.querySelector(".panelcircles");
+        const main = document.querySelector(".maine");
+        const text = document.querySelector(".texted");
+
+        //buttons
+        const blue = document.querySelector(".blue");
+        const white = document.querySelector(".white");
+        const black = document.querySelector(".black");
+
+        blue.addEventListener("click", ()=>
+        {
+            changeAll("#1A3864", "white", "Logo ANEP-UTU blanco.png");
+        });
+
+        white.addEventListener("click", ()=>
+        {
+            changeAll("white", "#1A3864", "Logo ANEP-UTU negativo.png");
+        });
+
+        black.addEventListener("click", ()=>
+        {
+            changeAll("#303030", "white", "Logo ANEP-UTU blanco.png");
+        });
+
+        img.addEventListener("click", ()=>
+        {
+            panel.classList.toggle("panelMoved");
+        });
+
+        const changeAll = (back, color,logo)=> 
+        {
+            main.style.backgroundColor = back;
+            text.style.color = color;
+            img.src = logo;
+            img.click();
+        }
+    </script>
+</body>
+</html>
+
+<style>
+    main
+    {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background-color: #1A3864;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    body
+    {
+        margin: 0;
+    }
+
+    main>h2 
+    {
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-size: 5rem;
+        color: #f2f2f2;
+        font-style: normal;
+        user-select: none;
+        text-align: center;
+        padding: 0 5%;
+    }
+
+    .logoUTU 
+    {
+        width: 50%;
+        position: absolute;
+        bottom: 3%;
+    }
+
+    .panelcircles 
+    {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        transform: translateX(70px);
+        transition: all ease-in-out .3s;
+    }
+
+    .panelMoved
+    {
+        transform: translateX(0);
+    }
+
+    .panelcircles>div 
+    {
+        width: 50px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        user-select: none;
+    }
+
+    .panelcircles>.blue 
+    {
+        background: #1A3864;
+        border: 1px solid white;
+    }
+
+    .panelcircles>.white 
+    {
+        background: white;
+        border: 1px solid black;
+    }
+
+    .panelcircles>.black 
+    {
+        background: #303030;
+        border: 1px solid white;
+    }
+
+
+</style>
