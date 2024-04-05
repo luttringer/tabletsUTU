@@ -24,6 +24,9 @@
 
     <script>
         let font = 5.0;
+
+        const fontItems = document.getElementsByClassName("font");
+
         const img = document.querySelector(".logoUTU");
         const panel = document.querySelector(".panelcircles");
         const main = document.querySelector(".maine");
@@ -37,16 +40,31 @@
         blue.addEventListener("click", ()=>
         {
             changeAll("#1A3864", "white", "Logo ANEP-UTU blanco.png");
+            Array.from(fontItems).forEach((item) => 
+            {
+                item.style.color = "white";
+                item.style.border = "1px solid white";
+            });
         });
 
         white.addEventListener("click", ()=>
         {
             changeAll("white", "#1A3864", "Logo ANEP-UTU negativo.png");
+            Array.from(fontItems).forEach((item) => 
+            {
+                item.style.color = "#303030";
+                item.style.border = "1px solid #303030";
+            });
         });
 
         black.addEventListener("click", ()=>
         {
             changeAll("#303030", "white", "Logo ANEP-UTU blanco.png");
+            Array.from(fontItems).forEach((item) => 
+            {
+                item.style.color = "white";
+                item.style.border = "1px solid white";
+            });
         });
 
         img.addEventListener("click", ()=>
