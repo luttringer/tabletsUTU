@@ -60,11 +60,6 @@
             img.click();
         }
 
-        document.addEventListener("DOMContentLoaded", ()=> 
-        {
-            abrirPantallaCompleta();
-        })
-
         // Función para abrir el sitio en pantalla completa
         function abrirPantallaCompleta() {
             // Obtener el elemento raíz (documento)
@@ -106,6 +101,11 @@
         flex-direction: column;
         padding: 0 10%;
         box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     main>h2 
