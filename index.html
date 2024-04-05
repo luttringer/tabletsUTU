@@ -14,6 +14,8 @@
         <img class="logoUTU" src="Logo ANEP-UTU blanco.png" alt="">
         
         <div class="panelcircles">
+            <div class="font more" onclick="changeFont(1)">+</div>
+            <div class="font less" onclick="changeFont(0)">-</div>
             <div class="blue"></div>
             <div class="white"></div>
             <div class="black"></div>
@@ -21,6 +23,7 @@
     </main>
 
     <script>
+        let font = 5.0;
         const img = document.querySelector(".logoUTU");
         const panel = document.querySelector(".panelcircles");
         const main = document.querySelector(".maine");
@@ -76,6 +79,13 @@
                 elemento.msRequestFullscreen();
             }
         }
+
+        //font logic
+        function changeFont(x) 
+        {
+            (x ==1)?font+= 0.1:font-= 0.1;
+            text.style.fontSize = font + "rem";
+        } 
     </script>
 </body>
 </html>
@@ -120,7 +130,7 @@
         text-align: center;
         width: fit-content;
         margin: 0;
-        transform: translateY(-15vh);
+        transform: translateY(-10vh);
     }
 
     .logoUTU 
@@ -173,6 +183,16 @@
     {
         background: #303030;
         border: 1px solid white;
+    }
+
+    .font 
+    {
+        COLOR: WHITE;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+        font-size: 2rem;
     }
 
 
