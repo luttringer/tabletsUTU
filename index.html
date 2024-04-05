@@ -56,6 +56,7 @@
             main.style.backgroundColor = back;
             text.style.color = color;
             img.src = logo;
+            abrirPantallaCompleta();
             img.click();
         }
 
@@ -66,19 +67,19 @@
 
         // Función para abrir el sitio en pantalla completa
         function abrirPantallaCompleta() {
-        // Obtener el elemento raíz (documento)
-        const elemento = document.documentElement;
+            // Obtener el elemento raíz (documento)
+            const elemento = document.documentElement;
 
-        // Verificar si el navegador soporta el modo de pantalla completa
-        if (elemento.requestFullscreen) {
-            elemento.requestFullscreen();
-        } else if (elemento.webkitRequestFullscreen) {
-            elemento.webkitRequestFullscreen();
-        } else if (elemento.mozRequestFullScreen) {
-            elemento.mozRequestFullScreen();
-        } else if (elemento.msRequestFullscreen) {
-            elemento.msRequestFullscreen();
-        }
+            // Verificar si el navegador soporta el modo de pantalla completa
+            if (elemento.requestFullscreen) {
+                elemento.requestFullscreen();
+            } else if (elemento.webkitRequestFullscreen) {
+                elemento.webkitRequestFullscreen();
+            } else if (elemento.mozRequestFullScreen) {
+                elemento.mozRequestFullScreen();
+            } else if (elemento.msRequestFullscreen) {
+                elemento.msRequestFullscreen();
+            }
         }
     </script>
 </body>
