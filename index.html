@@ -13,6 +13,7 @@
 <body class="maine">
     <main>
         <i class='bx bx-fullscreen maxScreen' onclick="abrirPantallaCompleta();"></i>
+        <p class="sizeFont"></p>
 
         <h2 class="texted" contenteditable="true">Senior Full Stack. Christian Menendez.</h2>
         <br><br><br>
@@ -33,7 +34,7 @@
         let fontT = 2.5;
 
         const fontItems = document.getElementsByClassName("font");
-
+        const numberF = document.querySelector(".sizeFont");
         const img = document.querySelector(".logoUTU");
         const panel = document.querySelector(".panelcircles");
         const main = document.querySelector(".maine");
@@ -91,6 +92,7 @@
 
         // Función para abrir el sitio en pantalla completa
         function abrirPantallaCompleta() {
+            document.querySelector(".maxScreen").style.display = "none";
             // Obtener el elemento raíz (documento)
             const elemento = document.documentElement;
             // Verificar si el navegador soporta el modo de pantalla completa
@@ -112,6 +114,13 @@
             (x ==1)?fontT+= 0.1:fontT-= 0.1;
             text.style.fontSize = font + "rem";
             textedtwo.style.fontSize = fontT + "rem";
+
+            numberF.innerHTML = font.toFixed(2);
+            numberF.style.display = "initial";
+            
+            setTimeout(() => {
+                numberF.style.display = "none";
+            }, 3000);
         } 
     </script>
 </body>
@@ -125,6 +134,16 @@
         height: 100vh;
         overflow: hidden;
         background-color: #1A3864
+    }
+
+    .sizeFont 
+    {
+        position: fixed;
+        bottom: 15px;
+        left: 15px;
+        color: red;
+        font-size: 2rem;
+        display: none;
     }
 
     main
