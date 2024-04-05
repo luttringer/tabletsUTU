@@ -109,6 +109,7 @@
             document.querySelector(".maxScreen").style.display = "initial";
         }
 
+        const elemento = document.documentElement;
         // Agregar los eventos de cambio de estado de pantalla completa
         documento.addEventListener('fullscreenchange', handleSalirPantallaCompleta);
         documento.addEventListener('webkitfullscreenchange', handleSalirPantallaCompleta);
