@@ -30,6 +30,7 @@
 
     <script>
         let font = 5.0;
+        let fontT = 3;
 
         const fontItems = document.getElementsByClassName("font");
 
@@ -108,8 +109,9 @@
         function changeFont(x) 
         {
             (x ==1)?font+= 0.1:font-= 0.1;
+            (x ==1)?fontT+= 0.1:fontT-= 0.1;
             text.style.fontSize = font + "rem";
-            textedtwo.style.fontSize = (font - 0.5) + "rem";
+            textedtwo.style.fontSize = fontT + "rem";
         } 
     </script>
 </body>
@@ -134,7 +136,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding: 0 10%;
+        padding: 0 5%;
         box-sizing: border-box;
         position: absolute;
         top: 0;
@@ -160,7 +162,7 @@
 
     main>h2:nth-of-type(2)
     {
-        font-size: 4.5vh;
+        font-size: 3rem;
         font-weight: 600;
     }
 
